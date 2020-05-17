@@ -14,7 +14,7 @@ namespace SnakeConsoleApp
 		{
 			_points = new List<Point>();
 		}
-		public Snake CreateSnake(int length, Point snakeTail, DirectionEnum direction)
+		public void CreateSnake(int length, Point snakeTail, DirectionEnum direction)
 		{
 			_direction = direction;
 			for (int i = 0; i < length; i++)
@@ -23,7 +23,6 @@ namespace SnakeConsoleApp
 				point.SetDirection(i, direction);
 				_points.Add(point);
 			}
-			return new Snake();
 		}
 
 		public void Move()
@@ -50,6 +49,18 @@ namespace SnakeConsoleApp
 			else if (key == ConsoleKey.DownArrow)
 				_direction = DirectionEnum.Down;
 
+		}
+
+		public bool CollisionWithOwnTail()
+		{
+			Point head = _points.Last();
+
+			for (int i = 0; i < _points.Count - 1; i++)
+			{
+				if (head.ComparePoints(_points[i]))
+					return true;
+			}
+			return false;
 		}
 
 		public bool Eat(Point food)

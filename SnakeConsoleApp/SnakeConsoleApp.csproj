@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Enums\DirectionEnum.cs" />
     <Compile Include="Factory\FoodFactory.cs" />
+    <Compile Include="GamePlay.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
+    <Compile Include="Helpers\ScoreHelper.cs" />
     <Compile Include="Installers\LineInstaller.cs" />
     <Compile Include="Lines\HorizontalLine.cs" />
     <Compile Include="Lines\VerticalLine.cs" />
@@ -54,6 +56,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="UI\UIService.cs" />
+    <Compile Include="UserServices\User.cs" />
+    <Compile Include="UserServices\UserInitializer.cs" />
+    <Compile Include="UserServices\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
